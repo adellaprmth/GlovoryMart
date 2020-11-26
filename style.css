@@ -112,8 +112,20 @@
         box-shadow: 0 0 11px rgba(33, 33, 33, .2);
     }
     
+    .card .card-header {
+        height: 14em;
+        background-color: white;
+        border-bottom: 0px transparent;
+    }
+    
     .card .card-img-top {
         padding: 1em;
+        height: auto;
+        width: auto;
+    }
+    
+    .card .card-body .card-title {
+        height: 5em;
     }
     
     .card .card-body .card-text {
