@@ -50,7 +50,7 @@
                             </div>
                             <div class="card-body">
                                 <h5 class="card-title">{{item.name}}</h5>
-                                <h5 class="card-text">Rp {{item.price}}</h5>
+                                <h5 class="card-text">Rp {{currency(item.price)}}</h5>
                                 <button @click="addCart(item.id)" class="btn btn-cart" :key=`btn-add-${item.id}` v-bind:id=`btn-add-${item.id}`>Add to cart</button>
                             </div>
                         </div>
@@ -94,7 +94,7 @@
                                                 <button type="button" class="btn delete-item" @click="removeCart(item.id)">
                                                     <span class="fas fa-trash " aria-hidden="true "></span>
                                                 </button>
-                                                <p class="price ">Rp {{item.price * item.count}}</p>
+                                                <p class="price ">Rp {{currency(item.price * item.count)}}</p>
                                             </div>
                                         </div>
                                     </div>
@@ -104,7 +104,7 @@
                         <div class="modal-footer ">
                             <a class="cart-footer">
                                 <div class="purchase-text ">Purchase Order</div>
-                                <div class="purchase-total ">Rp {{totalPrice}}</div>
+                                <div class="purchase-total ">Rp {{currency(totalPrice)}}</div>
                             </a>
                         </div>
                     </div>
@@ -224,6 +224,9 @@
                     this.productCarts.pop()
                 }
             },
+            currency: function(money) {
+                return new Intl.NumberFormat("id-ID").format(money)
+            }
         }
     })
 </script>
