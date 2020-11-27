@@ -11,185 +11,220 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
 </head>
 
 <body>
-    <header class="header-menu">
-        <nav class="navbar navbar-expand-sm bg navbar">
-            <a class="navbar-brand" href="index.html">
-                <img src="assets/logo.svg" width=110px>
-            </a>
-            <div class="form-group has-search">
-                <span class="fas fa-search form-control-feedback"></span>
-                <input type="text" class="form-control" placeholder="Search products">
-            </div>
-            <ul class="nav justify-content-end">
-                <li class="nav-item">
-                    <a class="nav-link" data-toggle="modal" data-target="#myCart">
-                        <i class="fas fa-shopping-bag"></i>
-                        <span class="badge">10</span>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="">
-                        <i class="fas fa-user-alt"></i>
-                    </a>
-                </li>
-            </ul>
-        </nav>
-    </header>
-    <section>
-        <div class="container my-3 py-5 text-center">
-            <div class="row">
-                <div class="col-lg-3 col-md-6">
-                    <div class="card">
-                        <div class="card-header">
-                            <img class="card-img-top img-fluid " src="assets/prod1.jpg " alt="Card image ">
-                        </div>
-                        <div class="card-body">
-                            <h5 class="card-title">Qtela Tempe Cabai Rawit 55g</h5>
-                            <h5 class="card-text">Rp 7.000</h5>
-                            <a href="#" class="btn btn-cart">Add to cart</a>
-                        </div>
-                    </div>
+    <div id="app">
+        <header class="header-menu">
+            <nav class="navbar fixed-top navbar-expand-sm bg navbar">
+                <a class="navbar-brand" href="index.html">
+                    <img src="assets/logo.svg" width=110px>
+                </a>
+                <div class="form-group has-search">
+                    <span class="fas fa-search form-control-feedback"></span>
+                    <input type="text" class="form-control" placeholder="Search products" v-model="search">
                 </div>
-                <div class="col-lg-3 col-md-6">
-                    <div class="card">
-                        <div class="card-header">
-                            <img class="card-img-top img-fluid " src="assets/prod2.jpg" alt="Card image ">
-                        </div>
-                        <div class="card-body">
-                            <h5 class="card-title">Pocky Sticks Chocolate</h5>
-                            <h5 class="card-text">Rp 9.500</h5>
-                            <a href="#" class="btn btn-cart">Add to cart</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6">
-                    <div class="card">
-                        <div class="card-header">
-                            <img class="card-img-top img-fluid " src="assets/prod3.jpg " alt="Card image ">
-                        </div>
-                        <div class="card-body">
-                            <h5 class="card-title">Pocky Sticks Strawberry</h5>
-                            <h5 class="card-text">Rp 9.500</h5>
-                            <a href="#" class="btn btn-cart">Add to cart</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6">
-                    <div class="card">
-                        <div class="card-header">
-                            <img class="card-img-top img-fluid " src="assets/prod4.jpg " alt="Card image ">
-                        </div>
-                        <div class="card-body">
-                            <h5 class="card-title">Susu UHT Full Cream Ultramilk 250ml</h5>
-                            <h5 class="card-text">Rp 5.500</h5>
-                            <a href="#" class="btn btn-cart">Add to cart</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6">
-                    <div class="card">
-                        <div class="card-header">
-                            <img class="card-img-top img-fluid " src="assets/prod5.jpg " alt="Card image ">
-                        </div>
-                        <div class="card-body">
-                            <h5 class="card-title">Susu UHT Chocolate Ultramilk 250ml</h5>
-                            <h5 class="card-text">Rp 5.500</h5>
-                            <a href="#" class="btn btn-cart">Add to cart</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6">
-                    <div class="card">
-                        <div class="card-header">
-                            <img class="card-img-top img-fluid " src="assets/prod6.jpg" alt="Card image ">
-                        </div>
-                        <div class="card-body">
-                            <h5 class="card-title">Lay's Sapi Panggang 68gr</h5>
-                            <h5 class="card-text">Rp 24.000</h5>
-                            <a href="#" class="btn btn-cart">Add to cart</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <section>
-        <div id="myCart" class="modal fixed-left fade" tabindex="-1" role="dialog">
-            <div class="modal-dialog modal-dialog-aside" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                        <h5 class="modal-title">Cart</h5>
-                        <a class="del-all" href="">Clear All</a>
-                    </div>
-                    <div class=" modal-body">
-                        <div class="inner-content">
-                            <div class="cart-item">
-                                <div class="thumbnails">
-                                    <img src="assets/prod1.jpg " width="60em ">
-                                </div>
-                                <div class="details-middle ">
-                                    <div class="row ">
-                                        <div class="col-lg-8 col-xs-8 ">
-                                            <p>Qtela Tempe Cabai Rawit 55g</p>
-                                            <div class="input-group ">
-                                                <input type="button " value="- " class="button-minus " data-field="quantity ">
-                                                <input type="number " step="1 " max=" " value="1 " name="quantity " class="quantity-field ">
-                                                <input type="button " value="+ " class="button-plus " data-field="quantity ">
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-4 col-xs-4 ">
-                                            <button type="button " class="btn delete-item ">
-                                                <span class="fas fa-trash " aria-hidden="true " ></span>
-                                            </button>
-                                            <p class="price ">Rp 7.000</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="cart-item">
-                                <div class="thumbnails">
-                                    <img src="assets/prod6.jpg" width="60em ">
-                                </div>
-                                <div class="details-middle ">
-                                    <div class="row ">
-                                        <div class="col-lg-8 col-xs-8 ">
-                                            <p>Lay's Sapi Panggang 68gr</p>
-                                            <div class="input-group ">
-                                                <input type="button " value="- " class="button-minus " data-field="quantity ">
-                                                <input type="number " step="1 " max=" " value="1 " name="quantity " class="quantity-field ">
-                                                <input type="button " value="+ " class="button-plus " data-field="quantity ">
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-4 col-xs-4 ">
-                                            <button type="button " class="btn delete-item ">
-                                                <span class="fas fa-trash " aria-hidden="true " ></span>
-                                            </button>
-                                            <p class="price ">Rp 24.000</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="modal-footer ">
-                        <a class="cart-footer">
-                            <div class="purchase-text ">Purchase Order</div>
-                            <div class="purchase-total ">Rp 31.000</div>
+                <ul class="nav justify-content-end">
+                    <li class="nav-item">
+                        <a class="nav-link" data-toggle="modal" data-target="#myCart">
+                            <i class="fas fa-shopping-bag"></i>
+                            <span class="badge">{{totalCart}}</span>
                         </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="">
+                            <i class="fas fa-user-alt"></i>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+        <section>
+            <div class="container my-3 py-5 text-center">
+                <div class="row">
+                    <div class="col-lg-3 col-md-6" v-for="item in productShow" :key=`card-product-${item.id}` v-bind:id=`card-product-${item.id}`>
+                        <div class="card">
+                            <div class="card-header">
+                                <img class="card-img-top img-fluid " v-bind:src="item.imageURL" alt="Card image ">
+                            </div>
+                            <div class="card-body">
+                                <h5 class="card-title">{{item.name}}</h5>
+                                <h5 class="card-text">Rp {{item.price}}</h5>
+                                <button @click="addCart(item.id)" class="btn btn-cart" :key=`btn-add-${item.id}` v-bind:id=`btn-add-${item.id}`>Add to cart</button>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
-    <footer>
-        <small>© GlovoryMart - All rights reserved.</small>
-    </footer>
+        </section>
+        <section>
+            <div id="myCart" class="modal fixed-left fade" tabindex="-1" role="dialog">
+                <div class="modal-dialog modal-dialog-aside" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                            <h5 class="modal-title">Cart</h5>
+                            <a class="del-all" @click="clear">Clear All</a>
+                        </div>
+                        <div class=" modal-body">
+                            <div class="inner-content">
+                                <div class="cart-item" v-for="item in productCarts" :key=`cart-${item.id}` v-bind:id=`cart-${item.id}`>
+                                    <div class="thumbnails">
+                                        <img v-bind:src="item.imageURL" width="60em ">
+                                    </div>
+                                    <div class="details-middle ">
+                                        <div class="row ">
+                                            <div class="col-lg-8 col-xs-8 ">
+                                                <p>{{item.name}}</p>
+                                                <div class="input-group ">
+                                                    <div class="input-group-prepend">
+                                                        <button type="button " class="btn button-minus" @click="item.count = (item.count ==1)? 1: item.count-1" data-field="quantity ">-</button>
+                                                    </div>
+                                                    <input type="number " step="1 " max="999" name="quantity" v-model="item.count" class="quantity-field ">
+                                                    <div class="input-group-append">
+                                                        <button type="button " class="btn button-plus " @click="item.count++" data-field="quantity ">+</button>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                            <div class="col-lg-4 col-xs-4 ">
+                                                <button type="button" class="btn delete-item" @click="removeCart(item.id)">
+                                                    <span class="fas fa-trash " aria-hidden="true "></span>
+                                                </button>
+                                                <p class="price ">Rp {{item.price * item.count}}</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer ">
+                            <a class="cart-footer">
+                                <div class="purchase-text ">Purchase Order</div>
+                                <div class="purchase-total ">Rp {{totalPrice}}</div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <footer>
+            <small>© GlovoryMart - All rights reserved.</small>
+        </footer>
+
+    </div>
 </body>
+<script>
+    let productStore = [{
+        id: 1,
+        imageURL: "assets/prod1.jpg",
+        name: "Qtela Tempe Cabai Rawit 55g",
+        price: 7000
+
+    }, {
+        id: 2,
+        imageURL: "assets/prod2.jpg",
+        name: "Pocky Sticks Chocolate",
+        price: 9500
+    }, {
+        id: 3,
+        imageURL: "assets/prod3.jpg",
+        name: "Pocky Sticks Strawberry",
+        price: 9500
+    }, {
+        id: 4,
+        imageURL: "assets/prod4.jpg",
+        name: "Susu UHT Full Cream Ultramilk 250ml",
+        price: 5500
+    }, {
+        id: 5,
+        imageURL: "assets/prod5.jpg",
+        name: "Susu UHT Chocolate Ultramilk 250ml",
+        price: 5500
+    }, {
+        id: 6,
+        imageURL: "assets/prod6.jpg",
+        name: "Lay's Sapi Panggang 68gr",
+        price: 24000
+    }, ]
+
+    let app = new Vue({
+        el: "#app",
+        data() {
+            return {
+                products: productStore,
+                productCarts: [],
+                search: ""
+            }
+        },
+        computed: {
+            totalPrice: function() {
+                let total = 0
+                for (c of this.productCarts) {
+                    total += c.price * c.count
+                }
+                return total
+            },
+            totalCart: function() {
+                return this.productCarts.length
+            },
+            productShow: function() {
+                let ps = []
+                regexStr = `.*${this.search.toLowerCase()}.*`
+                for (p of this.products) {
+                    if (p.name.toLowerCase().match(regexStr)) {
+                        ps.push(p)
+                    }
+                }
+                return ps
+            }
+        },
+        methods: {
+            addCart: function(id) {
+                id = Number(id)
+                console.log(`addCart id: ${id} called`)
+                let prod
+                for (p of this.products) {
+                    if (p.id == id) {
+                        prod = {...p
+                        }
+                        break
+                    }
+                }
+                console.log(prod)
+                let exist = false
+                for (p of this.productCarts) {
+                    if (p.id != id) continue
+                    p.count++
+                        exist = true
+                }
+                if (!exist) {
+                    this.productCarts.push({...prod,
+                        count: 1
+                    })
+                }
+            },
+            removeCart: function(id) {
+                id = Number(id)
+                idx = -1
+                for (let i = 0; i < this.productCarts.length; i++) {
+                    if (this.productCarts[i].id == id) {
+                        idx = i
+                        break
+                    }
+                }
+                this.productCarts.splice(idx, 1)
+            },
+            clear: function() {
+                while (this.productCarts.length > 0) {
+                    this.productCarts.pop()
+                }
+            },
+        }
+    })
+</script>
 
 </html>

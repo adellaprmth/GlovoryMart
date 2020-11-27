@@ -3,6 +3,7 @@
     }
     
     .navbar {
+        background-color: white;
         padding: 1em;
     }
     
@@ -48,6 +49,7 @@
         -webkit-box-shadow: 0 8px 6px -6px #999;
         -moz-box-shadow: 0 8px 6px -6px #999;
         box-shadow: 0 8px 6px -6px #999;
+        margin-bottom: 3em;
     }
     
     .form-group {
@@ -142,6 +144,14 @@
         font-weight: 500;
     }
     
+    .card .card-body .btn-cart:hover {
+        width: 90%;
+        border-radius: 9px;
+        background-color: #7c231c;
+        color: white;
+        font-weight: 500;
+    }
+    
     .modal .modal-dialog-aside {
         width: 350px;
         max-width: 80%;
@@ -181,6 +191,7 @@
     }
     
     .modal-header .del-all {
+        cursor: pointer;
         color: #8f9bb3;
     }
     
@@ -224,7 +235,7 @@
     }
     
     .details-middle .price {
-        margin-top: 1em;
+        margin-top: 2em;
         float: right;
         font-weight: 600;
     }
@@ -270,8 +281,8 @@
     
     .input-group {
         clear: both;
-        margin: 15px 0;
-        position: relative;
+        position: absolute;
+        display: inline-flex;
     }
     
     .input-group input[type='button'] {
@@ -283,10 +294,9 @@
     
     .input-group .button-minus,
     .input-group .button-plus {
+        background-color: #eeeeee;
         font-weight: bold;
         height: 2.4em;
-        width: 2.4em;
-        position: relative;
     }
     
     .input-group .quantity-field {
@@ -297,12 +307,11 @@
         width: 4em;
         display: inline-block;
         font-size: 13px;
-        margin: 0 0 1em;
         resize: vertical;
     }
     
     .button-plus {
-        left: -13px;
+        left: -.8em;
     }
     
     input[type="number"] {
