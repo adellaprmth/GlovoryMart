@@ -25,6 +25,7 @@
         margin-left: 1.5em;
         border-radius: 8px;
         height: 3em;
+        cursor: pointer;
     }
     
     .nav .nav-link i {
@@ -325,11 +326,17 @@
         padding-left: 3.5em;
         padding-top: 1.5em;
         padding-bottom: 1em;
+        text-align: center;
     }
     
-    footer small {
-        width: 100%;
+    footer small,
+    footer small a {
         color: white;
         font-size: medium;
         font-weight: 500;
+    }
+    
+    footer small a:hover {
+        color: #a6b7eb;
+        text-decoration: none;
     }
